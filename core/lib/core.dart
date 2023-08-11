@@ -7,7 +7,6 @@ export 'package:firebase_core/firebase_core.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:firebase_storage/firebase_storage.dart';
 
-export 'config/app_config.dart';
 export 'config/network/dio_config.dart';
 export 'constants/api_constants.dart';
 export 'constants/storage_constants.dart';

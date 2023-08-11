@@ -1,9 +1,9 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-Future<void> mainCommon(Flavor flavor) async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  _setupDI(flavor);
+  _setupDI();
 
   await Firebase.initializeApp(
     options: appLocator<FirebaseOptions>(),
@@ -12,13 +12,8 @@ Future<void> mainCommon(Flavor flavor) async {
   runApp(const App());
 }
 
-void _setupDI(Flavor flavor) {
-  appLocator.pushNewScope(
-    scopeName: unauthScope,
-    init: (_) {
-      AppDI.initDependencies(flavor);
-    },
-  );
+void _setupDI() {
+  AppDI.initDependencies();
 }
 
 class App extends StatelessWidget {
