@@ -5,6 +5,10 @@ Future<void> mainCommon(Flavor flavor) async {
   WidgetsFlutterBinding.ensureInitialized();
   _setupDI(flavor);
 
+  await Firebase.initializeApp(
+    options: appLocator<FirebaseOptions>(),
+  );
+
   runApp(const App());
 }
 
@@ -25,4 +29,3 @@ class App extends StatelessWidget {
     return const Placeholder();
   }
 }
-  
